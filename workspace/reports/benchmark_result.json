@@ -1,0 +1,10 @@
+{
+  "total_transactions": 1000,
+  "elapsed_seconds": 3.329,
+  "throughput_tps": 300.41,
+  "p50_latency_ms": 3.33,
+  "p95_latency_ms": 3.33,
+  "p99_latency_ms": 3.33,
+  "target_tps": 150.0,
+  "meets_target": true
+}

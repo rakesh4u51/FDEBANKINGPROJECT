@@ -1,0 +1,11 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Force LF regardless of platform/checkout settings for anything that gets
+# executed by an interpreter — CRLF here breaks bash (`set -euo pipefail`
+# fails with "invalid option name") and causes silent hook/script failures.
+*.sh text eol=lf
+*.py text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf

@@ -1,0 +1,10 @@
+starter_files/lms*
+*.docx
+*.pptx
+# workspace/ is the submission — keep secrets and local state out of it
+.env
+.claude/settings.local.json
+venv/
+.venv/
+__pycache__/
+*.pyc

@@ -1,0 +1,17 @@
+Fraud detection starter for Module 5 Project 4 — Real-Time Fraud Detection at Scale.
+Ubuntu lab home: ~/Desktop/Project/
+Setup: ~/Desktop/Project/M5_P1_Automation_Setup/Guided_Activity.md
+Project 4 (this lab): ~/Desktop/Project/M5_P4_RealTime_Fraud_Detection/Guided_Activity.md
+
+Engine you will build:
+  - common/generator.py    (synthetic transaction generator — baseline, ships working)
+  - common/metrics.py      (latency/throughput measurement — baseline, ships working)
+  - common/batch.py        (batch transaction processing for throughput — Activity 1)
+  - common/patterns.py     (Claude-based fraud pattern matching — Activity 2)
+  - common/risk.py         (high/medium/low risk prioritization — Activity 3)
+  - common/reporting.py    (daily fraud summary report — Activity 5)
+  - engine/fraud_engine.py (orchestrator that wires everything together)
+
+Project 4 builds a high-performance fraud detection engine that processes 1,000
+transactions, flags fraud patterns in real time, tiers them by risk, and produces
+a daily fraud summary report for the fraud operations desk.
