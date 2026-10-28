@@ -27,8 +27,8 @@ def chunk_transactions(transactions: list[dict], batch_size: int = 25) -> Iterat
     The last chunk may be smaller than batch_size. Must not drop or duplicate
     any transaction.
     """
-    # TODO(P4): yield transactions[i:i+batch_size] for i in range(0, len, batch_size).
-    raise NotImplementedError("Activity 1: implement chunk_transactions()")
+    for i in range(0, len(transactions), batch_size):
+        yield transactions[i : i + batch_size]
 
 
 def process_in_batches(
@@ -45,8 +45,15 @@ def process_in_batches(
     - Preserve overall transaction order in the returned list (submit in order,
       then extend results in the same order you submitted).
     """
-    # TODO(P4): build batches, submit each to the pool, collect + flatten results.
-    raise NotImplementedError("Activity 1: implement process_in_batches()")
+    batches = list(chunk_transactions(transactions, batch_size=batch_size))
+    results: list[dict] = []
+
+    with ThreadPoolExecutor(max_workers=max_workers) as pool:
+        futures = [pool.submit(worker_fn, batch) for batch in batches]
+        for future in futures:
+            results.extend(future.result())
+
+    return results
 
 
 if __name__ == "__main__":

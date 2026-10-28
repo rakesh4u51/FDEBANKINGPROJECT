@@ -24,7 +24,7 @@ from common.reporting import generate_daily_summary, write_report
 from common.risk import prioritize_queue
 
 DEFAULT_TRANSACTION_COUNT = 1000
-DEFAULT_BATCH_SIZE = 25
+DEFAULT_BATCH_SIZE = 100
 DEFAULT_MAX_WORKERS = 8
 
 
